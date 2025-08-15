@@ -14,15 +14,10 @@
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(10, 20, 40, 0.7), rgba(10, 20, 40, 0.7)), url('https://placehold.co/1920x1080/334155/ffffff?text=Modern+Roof');
-            background-size: cover;
-            background-position: center;
-        }
         .section-title {
             font-weight: 800;
-            font-size: 2.25rem; /* 36px */
-            line-height: 2.5rem; /* 40px */
+            font-size: 2.5rem; /* 40px */
+            line-height: 2.75rem; /* 44px */
             letter-spacing: -0.025em;
         }
         .cta-button {
@@ -30,80 +25,83 @@
         }
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            filter: brightness(1.1);
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .service-item {
+            border-left: 4px solid #1e293b; /* slate-800 */
+            padding-left: 1.5rem;
+            transition: border-color 0.3s ease;
+        }
+        .service-item:hover {
+            border-left-color: #3b82f6; /* blue-500 */
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-900 text-slate-300">
 
     <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <header class="bg-slate-900/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-800">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-slate-900">
-                Roof<span class="text-blue-600">Flow</span> AI
+            <a href="#" class="text-2xl font-bold text-white">
+                Roof<span class="text-blue-500">Flow</span> AI
             </a>
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="#services" class="text-slate-600 hover:text-blue-600 transition-colors">Services</a>
-                <a href="#about" class="text-slate-600 hover:text-blue-600 transition-colors">About Us</a>
-                <a href="#projects" class="text-slate-600 hover:text-blue-600 transition-colors">Projects</a>
-                <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold cta-button">Get a Quote</a>
+                <a href="#services" class="text-slate-300 hover:text-blue-500 transition-colors">Services</a>
+                <a href="#about" class="text-slate-300 hover:text-blue-500 transition-colors">Why Us</a>
+                <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold cta-button shadow-lg shadow-blue-500/20">Get a Quote</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden">
+            <button id="mobile-menu-button" class="md:hidden text-white">
                 <i data-lucide="menu"></i>
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
-            <a href="#services" class="block text-slate-600 hover:text-blue-600 transition-colors py-2">Services</a>
-            <a href="#about" class="block text-slate-600 hover:text-blue-600 transition-colors py-2">About Us</a>
-            <a href="#projects" class="block text-slate-600 hover:text-blue-600 transition-colors py-2">Projects</a>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2 bg-slate-900">
+            <a href="#services" class="block text-slate-300 hover:text-blue-500 transition-colors py-2">Services</a>
+            <a href="#about" class="block text-slate-300 hover:text-blue-500 transition-colors py-2">Why Us</a>
             <a href="#contact" class="block bg-blue-600 text-white text-center px-5 py-2 rounded-lg font-semibold cta-button mt-2">Get a Quote</a>
         </div>
     </header>
 
     <main>
-        <!-- Contact Section Moved to Top -->
-        <section id="contact" class="py-20 bg-slate-100">
+        <!-- Hero Section with Form -->
+        <section id="contact" class="py-20 bg-slate-800">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex flex-col md:flex-row items-center gap-16">
                     <!-- Left Column: Text -->
                     <div class="md:w-1/2 text-center md:text-left">
-                        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-slate-900">Get a Free, No-Obligation Quote Today</h1>
-                        <p class="text-lg text-slate-600 max-w-xl mx-auto md:mx-0">Fill out the form, and our AI-powered system will provide you with a preliminary estimate, followed by a detailed consultation with our experts.</p>
+                        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-white">Expert Roofing, Powered by Technology</h1>
+                        <p class="text-lg text-slate-400 max-w-xl mx-auto md:mx-0">Get a free, no-obligation quote for durable, high-quality roofing solutions. Fill out the form, and our team will provide a detailed consultation.</p>
                     </div>
                     <!-- Right Column: Form -->
                     <div class="md:w-1/2 w-full max-w-lg mx-auto">
-                        <div class="bg-white text-slate-800 p-8 rounded-xl shadow-2xl">
-                             <h2 class="text-2xl font-bold text-center mb-6">Start Here</h2>
+                        <div class="bg-slate-900 text-slate-300 p-8 rounded-xl shadow-2xl border border-slate-700">
+                             <h2 class="text-2xl font-bold text-center mb-6 text-white">Start Here</h2>
                             <form>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                     <div>
-                                        <label for="name" class="block mb-2 font-medium">Full Name</label>
-                                        <input type="text" id="name" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe">
+                                        <label for="name" class="block mb-2 font-medium text-slate-400">Full Name</label>
+                                        <input type="text" id="name" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="John Doe">
                                     </div>
                                     <div>
-                                        <label for="email" class="block mb-2 font-medium">Email Address</label>
-                                        <input type="email" id="email" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="john.doe@example.com">
+                                        <label for="email" class="block mb-2 font-medium text-slate-400">Email Address</label>
+                                        <input type="email" id="email" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="john.doe@example.com">
                                     </div>
                                 </div>
                                 <div class="mb-6">
-                                    <label for="service" class="block mb-2 font-medium">I'm interested in</label>
-                                    <select id="service" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white">
-                                        <option>New Roof</option>
-                                        <option>Roof Repair</option>
-                                        <option>AI Inspection</option>
-                                        <option>Other Inquiry</option>
+                                    <label for="service" class="block mb-2 font-medium text-slate-400">I'm interested in</label>
+                                    <select id="service" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white">
+                                        <option>New Roof Installation</option>
+                                        <option>Roof Repairs & Maintenance</option>
+                                        <option>Flat Roofing</option>
+                                        <option>Guttering, Fascias & Soffits</option>
+                                        <option>AI Drone Inspection</option>
                                     </select>
                                 </div>
                                 <div class="mb-6">
-                                    <label for="message" class="block mb-2 font-medium">Message</label>
-                                    <textarea id="message" rows="4" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Briefly describe your project or issue..."></textarea>
+                                    <label for="message" class="block mb-2 font-medium text-slate-400">Message</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="Briefly describe your project or issue..."></textarea>
                                 </div>
-                                <button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg cta-button">Send Inquiry</button>
+                                <button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg cta-button shadow-lg shadow-blue-500/30">Send Inquiry</button>
                             </form>
                         </div>
                     </div>
@@ -111,101 +109,72 @@
             </div>
         </section>
 
-        <!-- Hero Section -->
-        <section class="hero-bg text-white">
-            <div class="container mx-auto px-6 py-32 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Innovative Roofing Solutions Powered by AI</h1>
-                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">We combine years of roofing experience with the latest technology to provide you with a roof that lasts for generations.</p>
-                <a href="#services" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg cta-button inline-block">Explore Our Services</a>
-            </div>
-        </section>
-
         <!-- Services Section -->
-        <section id="services" class="py-20 bg-white">
+        <section id="services" class="py-20 bg-slate-900">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="section-title text-slate-900">Our Services</h2>
-                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto">We specialize in comprehensive roofing services, using modern materials and intelligent technologies.</p>
+                <div class="text-center mb-16">
+                    <h2 class="section-title text-white">Comprehensive Roofing Services</h2>
+                    <p class="text-slate-400 mt-4 max-w-3xl mx-auto">At RoofFlow AI, we offer a complete range of roofing services for residential and commercial properties. Our experienced team uses high-quality materials and innovative techniques to ensure your roof is secure, durable, and built to last.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="bg-slate-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 service-card">
-                        <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                            <i data-lucide="home" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-slate-900">New Roofs & Installations</h3>
-                        <p class="text-slate-600">We handle projects from the ground up, installing roofs on new buildings with a guarantee of the highest quality and durability.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="service-item">
+                        <h3 class="text-2xl font-bold mb-3 text-white">New Roof Installation</h3>
+                        <p class="text-slate-400">Whether you're building a new property or replacing an old roof, we provide expert installation services. We work with a variety of materials, including traditional tiles, slate, and modern composites, to create a roof that perfectly complements your property and provides maximum protection.</p>
                     </div>
-                    <!-- Service Card 2 -->
-                    <div class="bg-slate-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 service-card">
-                        <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                            <i data-lucide="shield-check" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-slate-900">Repairs & Renovations</h3>
-                        <p class="text-slate-600">We quickly and effectively fix any issues – from minor leaks to complete renovations of old roofing.</p>
+                    <div class="service-item">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Roof Repairs & Maintenance</h3>
+                        <p class="text-slate-400">From minor leaks and slipped tiles to significant storm damage, our team responds quickly to diagnose and fix any issue. We also offer routine maintenance plans to extend the life of your roof and prevent costly problems before they occur.</p>
                     </div>
-                    <!-- Service Card 3 -->
-                    <div class="bg-slate-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 service-card">
-                        <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                            <i data-lucide="scan-line" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-slate-900">AI Roof Inspections</h3>
-                        <p class="text-slate-600">We use drones and AI image analysis for a precise assessment of your roof's condition, detecting problems invisible to the naked eye.</p>
+                    <div class="service-item">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Flat Roofing Solutions</h3>
+                        <p class="text-slate-400">We specialize in modern flat roofing systems, including EPDM rubber, GRP fibreglass, and high-performance felt. Ideal for extensions, garages, and commercial buildings, our flat roofs are weather-resistant, durable, and come with long-term guarantees.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Guttering, Fascias & Soffits</h3>
+                        <p class="text-slate-400">A fully functional roofline is crucial for protecting your property from water damage. We install, repair, and replace uPVC fascias, soffits, and guttering systems that are low-maintenance, aesthetically pleasing, and ensure efficient rainwater disposal.</p>
+                    </div>
+                     <div class="service-item md:col-span-2">
+                        <h3 class="text-2xl font-bold mb-3 text-white">AI Drone Inspections</h3>
+                        <p class="text-slate-400">Leveraging cutting-edge technology, we use high-resolution drones to conduct safe and thorough roof inspections. Our AI-powered analysis identifies potential issues like hidden cracks, moisture retention, and structural weaknesses that are invisible to the naked eye, providing you with a comprehensive report and peace of mind.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Us Section -->
-        <section id="about" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2">
-                        <img src="https://placehold.co/600x400/e2e8f0/334155?text=Our+Team" alt="RoofFlow AI Team" class="rounded-xl shadow-lg w-full">
+        <!-- Why Us Section -->
+        <section id="about" class="py-20 bg-slate-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-white mb-6">Why Choose RoofFlow AI?</h2>
+                <p class="text-slate-400 mt-4 max-w-3xl mx-auto mb-12">We combine traditional craftsmanship with modern technology to deliver exceptional results. Our commitment is to quality, transparency, and customer satisfaction on every project.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-slate-900 p-8 rounded-lg border border-slate-700">
+                        <div class="flex justify-center mb-4">
+                            <i data-lucide="award" class="w-10 h-10 text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Quality Craftsmanship</h3>
+                        <p class="text-slate-400">Our team consists of certified and experienced roofers dedicated to the highest standards of workmanship.</p>
                     </div>
-                    <div class="md:w-1/2">
-                        <h2 class="section-title text-slate-900 mb-6">Why RoofFlow AI?</h2>
-                        <p class="text-slate-600 mb-4 text-lg">At RoofFlow AI, we believe the future of roofing lies in the fusion of craftsmanship and technology. Our team consists of skilled, passionate roofers who embrace innovation.</p>
-                        <p class="text-slate-600 mb-6">Our mission is to deliver not just sturdy roofs, but also complete peace of mind to our clients. Through AI analysis, we optimize processes, minimize risks, and ensure precision at every stage of the work.</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-center">
-                                <i data-lucide="check-circle-2" class="w-6 h-6 text-blue-600 mr-3"></i>
-                                <span class="text-slate-700 font-medium">Quality and timeliness guarantee</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="check-circle-2" class="w-6 h-6 text-blue-600 mr-3"></i>
-                                <span class="text-slate-700 font-medium">Individual approach to every project</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="check-circle-2" class="w-6 h-6 text-blue-600 mr-3"></i>
-                                <span class="text-slate-700 font-medium">Transparent pricing and clear terms</span>
-                            </li>
-                        </ul>
+                    <div class="bg-slate-900 p-8 rounded-lg border border-slate-700">
+                        <div class="flex justify-center mb-4">
+                            <i data-lucide="shield-check" class="w-10 h-10 text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Durable Materials</h3>
+                        <p class="text-slate-400">We source only the best, industry-approved materials to ensure your roof is long-lasting and resilient.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="section-title text-slate-900">Our Projects</h2>
-                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto">See how our work transforms homes and buildings. We are proud of every completed project.</p>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Project+1" alt="Project 1" class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Project+2" alt="Project 2" class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Project+3" alt="Project 3" class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Project+4" alt="Project 4" class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 lg:col-span-2">
-                    <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Project+5" alt="Project 5" class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-slate-900 p-8 rounded-lg border border-slate-700">
+                        <div class="flex justify-center mb-4">
+                            <i data-lucide="eye" class="w-10 h-10 text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Transparent Process</h3>
+                        <p class="text-slate-400">From the initial quote to project completion, we provide clear communication and honest advice.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-300">
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800">
         <div class="container mx-auto px-6 py-8 text-center">
             <p>&copy; 2024 RoofFlow AI. All rights reserved.</p>
             <p class="text-sm text-slate-500 mt-2">Demo site created for portfolio purposes.</p>
