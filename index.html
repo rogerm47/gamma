@@ -36,28 +36,6 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-         /* Chatbot button style */
-        #chatbot-button {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: #2563eb; /* blue-600 */
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-        #chatbot-button:hover {
-            background-color: #1d4ed8; /* blue-700 */
-            transform: scale(1.1);
-        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -88,12 +66,57 @@
     </header>
 
     <main>
+        <!-- Contact Section Moved to Top -->
+        <section id="contact" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <!-- Left Column: Text -->
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-slate-900">Get a Free, No-Obligation Quote Today</h1>
+                        <p class="text-lg text-slate-600 max-w-xl mx-auto md:mx-0">Fill out the form, and our AI-powered system will provide you with a preliminary estimate, followed by a detailed consultation with our experts.</p>
+                    </div>
+                    <!-- Right Column: Form -->
+                    <div class="md:w-1/2 w-full max-w-lg mx-auto">
+                        <div class="bg-white text-slate-800 p-8 rounded-xl shadow-2xl">
+                             <h2 class="text-2xl font-bold text-center mb-6">Start Here</h2>
+                            <form>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label for="name" class="block mb-2 font-medium">Full Name</label>
+                                        <input type="text" id="name" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block mb-2 font-medium">Email Address</label>
+                                        <input type="email" id="email" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="john.doe@example.com">
+                                    </div>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="service" class="block mb-2 font-medium">I'm interested in</label>
+                                    <select id="service" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white">
+                                        <option>New Roof</option>
+                                        <option>Roof Repair</option>
+                                        <option>AI Inspection</option>
+                                        <option>Other Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="message" class="block mb-2 font-medium">Message</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Briefly describe your project or issue..."></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg cta-button">Send Inquiry</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Hero Section -->
         <section class="hero-bg text-white">
             <div class="container mx-auto px-6 py-32 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Innovative Roofing Solutions Powered by AI</h1>
                 <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">We combine years of roofing experience with the latest technology to provide you with a roof that lasts for generations.</p>
-                <a href="#contact" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg cta-button inline-block">Free Consultation & Quote</a>
+                <a href="#services" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg cta-button inline-block">Explore Our Services</a>
             </div>
         </section>
 
@@ -179,44 +202,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-slate-800 text-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="section-title">Contact Us</h2>
-                    <p class="text-slate-300 mt-4 max-w-2xl mx-auto">Have questions? Want to get a no-obligation quote? Fill out the form or give us a call. We are at your service.</p>
-                </div>
-                <div class="max-w-2xl mx-auto bg-white text-slate-800 p-8 rounded-xl shadow-2xl">
-                    <form>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="name" class="block mb-2 font-medium">Full Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe">
-                            </div>
-                            <div>
-                                <label for="email" class="block mb-2 font-medium">Email Address</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="john.doe@example.com">
-                            </div>
-                        </div>
-                        <div class="mb-6">
-                            <label for="service" class="block mb-2 font-medium">I'm interested in</label>
-                            <select id="service" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white">
-                                <option>New Roof</option>
-                                <option>Roof Repair</option>
-                                <option>AI Inspection</option>
-                                <option>Other Inquiry</option>
-                            </select>
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block mb-2 font-medium">Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Briefly describe your project or issue..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg cta-button">Send Inquiry</button>
-                    </form>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -227,11 +212,8 @@
         </div>
     </footer>
 
-    <!-- Chatbot Button -->
-    <div id="chatbot-button" title="Chat with our AI assistant">
-        <!-- Your chatbot code will go here -->
-        <i data-lucide="message-circle" class="w-8 h-8"></i>
-    </div>
+    <!-- Chatbot script -->
+    <script src="https://primary-production-58a3.up.railway.app/webhook/a4993be8-ea3d-4774-90b0-bc65e4ed59dd/chat" defer></script>
 
     <script>
         // Initialize Lucide icons
@@ -251,16 +233,6 @@
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
-        });
-
-        // Placeholder for chatbot action
-        const chatbotButton = document.getElementById('chatbot-button');
-        chatbotButton.addEventListener('click', () => {
-            // This is where you can integrate the logic to open your chatbot window.
-            // For now, we'll just log a message to the console.
-            console.log('Chatbot button clicked!');
-            // You could add an alert here, but integrating a real widget is better.
-            // alert('Hi! How can I help you with your roof today?');
         });
     </script>
 </body>
