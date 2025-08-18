@@ -27,13 +27,17 @@
             transform: translateY(-2px);
             filter: brightness(1.1);
         }
-        .service-item {
-            border-left: 4px solid #1e293b; /* slate-800 */
-            padding-left: 1.5rem;
-            transition: border-color 0.3s ease;
+        .cta-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
-        .service-item:hover {
-            border-left-color: #3b82f6; /* blue-500 */
+        .service-card-link {
+             transition: all 0.3s ease;
+        }
+        .service-card-link:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6; /* blue-500 */
+            background-color: #1e293b; /* slate-800 */
         }
     </style>
 </head>
@@ -70,21 +74,21 @@
                     <!-- Left Column: Text -->
                     <div class="md:w-1/2 text-center md:text-left">
                         <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-white">Expert Roofing, Powered by Technology</h1>
-                        <p class="text-lg text-slate-400 max-w-xl mx-auto md:mx-0">Get a free, no-obligation quote for durable, high-quality roofing solutions. Fill out the form, and our team will provide a detailed consultation.</p>
+                        <p class="text-lg text-slate-400 max-w-xl mx-auto md:mx-0">Proudly serving the Greater Manchester area. Get a free, no-obligation quote for durable, high-quality roofing solutions. Fill out the form, and our team will provide a detailed consultation.</p>
                     </div>
                     <!-- Right Column: Form -->
                     <div class="md:w-1/2 w-full max-w-lg mx-auto">
                         <div class="bg-slate-900 text-slate-300 p-8 rounded-xl shadow-2xl border border-slate-700">
                              <h2 class="text-2xl font-bold text-center mb-6 text-white">Start Here</h2>
-                            <form>
+                            <form id="contact-form">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                     <div>
                                         <label for="name" class="block mb-2 font-medium text-slate-400">Full Name</label>
-                                        <input type="text" id="name" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="John Doe">
+                                        <input type="text" id="name" required class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="John Doe">
                                     </div>
                                     <div>
                                         <label for="email" class="block mb-2 font-medium text-slate-400">Email Address</label>
-                                        <input type="email" id="email" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="john.doe@example.com">
+                                        <input type="email" id="email" required class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="john.doe@example.com">
                                     </div>
                                 </div>
                                 <div class="mb-6">
@@ -99,9 +103,10 @@
                                 </div>
                                 <div class="mb-6">
                                     <label for="message" class="block mb-2 font-medium text-slate-400">Message</label>
-                                    <textarea id="message" rows="4" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="Briefly describe your project or issue..."></textarea>
+                                    <textarea id="message" rows="4" required class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="Briefly describe your project or issue..."></textarea>
                                 </div>
-                                <button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg cta-button shadow-lg shadow-blue-500/30">Send Inquiry</button>
+                                <button type="submit" id="submit-button" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg cta-button shadow-lg shadow-blue-500/30">Send Inquiry</button>
+                                <p id="form-status" class="text-center mt-4 h-6"></p>
                             </form>
                         </div>
                     </div>
@@ -109,40 +114,89 @@
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- Services Overview Section -->
         <section id="services" class="py-20 bg-slate-900">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="section-title text-white">Comprehensive Roofing Services</h2>
-                    <p class="text-slate-400 mt-4 max-w-3xl mx-auto">At RoofFlow AI, we offer a complete range of roofing services for residential and commercial properties. Our experienced team uses high-quality materials and innovative techniques to ensure your roof is secure, durable, and built to last.</p>
+                    <p class="text-slate-400 mt-4 max-w-3xl mx-auto">We offer a complete range of roofing services for residential and commercial properties. Our experienced team uses high-quality materials and innovative techniques to ensure your roof is secure, durable, and built to last. Explore our specialisms below.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="service-item">
-                        <h3 class="text-2xl font-bold mb-3 text-white">New Roof Installation</h3>
-                        <p class="text-slate-400">Whether you're building a new property or replacing an old roof, we provide expert installation services. We work with a variety of materials, including traditional tiles, slate, and modern composites, to create a roof that perfectly complements your property and provides maximum protection.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3 class="text-2xl font-bold mb-3 text-white">Roof Repairs & Maintenance</h3>
-                        <p class="text-slate-400">From minor leaks and slipped tiles to significant storm damage, our team responds quickly to diagnose and fix any issue. We also offer routine maintenance plans to extend the life of your roof and prevent costly problems before they occur.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3 class="text-2xl font-bold mb-3 text-white">Flat Roofing Solutions</h3>
-                        <p class="text-slate-400">We specialize in modern flat roofing systems, including EPDM rubber, GRP fibreglass, and high-performance felt. Ideal for extensions, garages, and commercial buildings, our flat roofs are weather-resistant, durable, and come with long-term guarantees.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3 class="text-2xl font-bold mb-3 text-white">Guttering, Fascias & Soffits</h3>
-                        <p class="text-slate-400">A fully functional roofline is crucial for protecting your property from water damage. We install, repair, and replace uPVC fascias, soffits, and guttering systems that are low-maintenance, aesthetically pleasing, and ensure efficient rainwater disposal.</p>
-                    </div>
-                     <div class="service-item md:col-span-2">
-                        <h3 class="text-2xl font-bold mb-3 text-white">AI Drone Inspections</h3>
-                        <p class="text-slate-400">Leveraging cutting-edge technology, we use high-resolution drones to conduct safe and thorough roof inspections. Our AI-powered analysis identifies potential issues like hidden cracks, moisture retention, and structural weaknesses that are invisible to the naked eye, providing you with a comprehensive report and peace of mind.</p>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <a href="#pitched-roofing" class="block p-8 bg-slate-800/50 rounded-lg border border-slate-700 service-card-link">
+                        <i data-lucide="home" class="w-12 h-12 mx-auto mb-4 text-blue-500"></i>
+                        <h3 class="text-xl font-bold text-white">Pitched Roofing</h3>
+                    </a>
+                    <a href="#flat-roofing" class="block p-8 bg-slate-800/50 rounded-lg border border-slate-700 service-card-link">
+                        <i data-lucide="layers" class="w-12 h-12 mx-auto mb-4 text-blue-500"></i>
+                        <h3 class="text-xl font-bold text-white">Flat Roofing</h3>
+                    </a>
+                    <a href="#repairs" class="block p-8 bg-slate-800/50 rounded-lg border border-slate-700 service-card-link">
+                        <i data-lucide="shield-check" class="w-12 h-12 mx-auto mb-4 text-blue-500"></i>
+                        <h3 class="text-xl font-bold text-white">Roof Repairs</h3>
+                    </a>
+                    <a href="#guttering" class="block p-8 bg-slate-800/50 rounded-lg border border-slate-700 service-card-link">
+                        <i data-lucide="droplets" class="w-12 h-12 mx-auto mb-4 text-blue-500"></i>
+                        <h3 class="text-xl font-bold text-white">Guttering & Fascias</h3>
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- Pitched Roofing Section -->
+        <section id="pitched-roofing" class="py-20 bg-slate-800">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white mb-4">Pitched Roofing (New Roofs & Re-roofing)</h2>
+                <p class="text-slate-400 max-w-3xl mb-8">A professionally installed pitched roof provides timeless appeal and robust protection. We are experts in both creating brand new roof structures and complete re-roofing projects, replacing old, worn-out coverings with modern, high-performance systems.</p>
+                <ul class="space-y-4 text-slate-300">
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Slate & Tile Roofing:</strong> We work with natural slate, clay tiles, and concrete tiles to deliver a classic, durable finish with a lifespan of decades.</span></li>
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Structural Work:</strong> Our service includes timber work, joist replacement, and ensuring the underlying structure is sound before new coverings are applied.</span></li>
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Insulation & Ventilation:</strong> We ensure your new roof meets modern standards for thermal efficiency and airflow, reducing energy bills and preventing condensation.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Flat Roofing Section -->
+        <section id="flat-roofing" class="py-20 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white mb-4">Flat Roofing Solutions</h2>
+                <p class="text-slate-400 max-w-3xl mb-8">Modern flat roofing is a versatile and cost-effective solution for extensions, garages, balconies, and commercial buildings. We install cutting-edge systems that are completely waterproof, durable, and low-maintenance.</p>
+                <ul class="space-y-4 text-slate-300">
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>EPDM Rubber Roofing:</strong> A highly durable synthetic rubber membrane with a lifespan of over 50 years. It's installed in a single sheet, eliminating seams and the risk of leaks.</span></li>
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>GRP Fibreglass Roofing:</strong> A seamless, hard-wearing system that creates a tough, waterproof laminate. It can be finished in various colours and is suitable for foot traffic.</span></li>
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>High-Performance Felt:</strong> A modern, multi-layer torch-on felt system that offers excellent waterproofing and a long lifespan, far superior to traditional felt roofing.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Roof Repairs Section -->
+        <section id="repairs" class="py-20 bg-slate-800">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white mb-4">Roof Repairs & Maintenance</h2>
+                <p class="text-slate-400 max-w-3xl mb-8">Addressing roof damage promptly is essential to protect your property's integrity. Our rapid-response repair team can handle any issue, from minor fixes to emergency storm damage, preventing small problems from becoming major expenses.</p>
+                <ul class="space-y-4 text-slate-300">
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Leak Detection & Repair:</strong> Using our expertise and AI-assisted drone inspections, we quickly locate the source of leaks and provide a lasting fix.</span></li>
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Tile & Slate Replacement:</strong> We replace cracked, slipped, or missing tiles and slates, matching them to your existing roof to ensure a seamless appearance.</span></li>
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Chimney & Leadwork:</strong> We carry out repointing, flashing repairs, and complete leadwork replacement to secure these vulnerable areas of your roof.</span></li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Guttering Section -->
+        <section id="guttering" class="py-20 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white mb-4">Guttering, Fascias & Soffits</h2>
+                <p class="text-slate-400 max-w-3xl mb-8">A well-maintained roofline is your property's first line of defence against water ingress. We install, repair, and replace durable uPVC roofline products that protect your home and enhance its appearance without the need for regular maintenance.</p>
+                <ul class="space-y-4 text-slate-300">
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Guttering Systems:</strong> We ensure your gutters are correctly aligned, securely fixed, and free from blockages to effectively channel rainwater away from your property.</span></li>
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Fascias & Soffits:</strong> We replace rotting timber with high-quality uPVC fascias and soffits, which protect the rafter ends and provide essential ventilation to your roof space.</span></li>
+                    <li class="flex items-start"><i data-lucide="check" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Cladding:</strong> Enhance and protect your home's exterior with our range of durable and attractive uPVC cladding options.</span></li>
+                </ul>
+            </div>
+        </section>
+
+
         <!-- Why Us Section -->
-        <section id="about" class="py-20 bg-slate-800">
+        <section id="about" class="py-20 bg-slate-800 border-t border-slate-700">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title text-white mb-6">Why Choose RoofFlow AI?</h2>
                 <p class="text-slate-400 mt-4 max-w-3xl mx-auto mb-12">We combine traditional craftsmanship with modern technology to deliver exceptional results. Our commitment is to quality, transparency, and customer satisfaction on every project.</p>
@@ -177,7 +231,12 @@
     <footer class="bg-slate-900 text-slate-400 border-t border-slate-800">
         <div class="container mx-auto px-6 py-8 text-center">
             <p>&copy; 2024 RoofFlow AI. All rights reserved.</p>
-            <p class="text-sm text-slate-500 mt-2">Demo site created for portfolio purposes.</p>
+            <p class="text-sm text-slate-500 mt-1">Based in Manchester, UK</p>
+            <div class="mt-4">
+                <a href="https://www.linkedin.com/company/roofflowai" target="_blank" rel="noopener noreferrer" class="inline-block text-slate-400 hover:text-blue-500 transition-colors" aria-label="LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
@@ -185,23 +244,87 @@
     <script src="https://primary-production-58a3.up.railway.app/webhook/a4993be8-ea3d-4774-90b0-bc65e4ed59dd/chat" defer></script>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        // Global error handler to catch script errors from external sources
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.log("A script error occurred, but it was handled gracefully:", message);
+            // Return true to prevent the firing of the default event handler
+            return true;
+        };
 
-        // Mobile menu handler
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // Wrap script in a DOMContentLoaded event listener to ensure the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            try {
+                lucide.createIcons();
+            } catch (e) {
+                console.error("Lucide icons could not be created.", e);
+            }
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+            // Mobile menu handler
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        // Close mobile menu on link click
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close mobile menu on link click
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+            
+            // Form submission handler
+            const contactForm = document.getElementById('contact-form');
+            const submitButton = document.getElementById('submit-button');
+            const formStatus = document.getElementById('form-status');
+            const webhookUrl = 'https://primary-production-58a3.up.railway.app/webhook-test/8f78b290-1766-4770-8259-5dc0f1e940f1';
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+                    formStatus.textContent = '';
+
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        service: document.getElementById('service').value,
+                        message: document.getElementById('message').value,
+                    };
+
+                    try {
+                        const response = await fetch(webhookUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(formData),
+                        });
+
+                        if (response.ok) {
+                            formStatus.textContent = 'Thank you! Your message has been sent.';
+                            formStatus.className = 'text-center mt-4 h-6 text-green-400';
+                            contactForm.reset();
+                        } else {
+                            throw new Error('Server responded with an error.');
+                        }
+                    } catch (error) {
+                        console.error('Form submission error:', error);
+                        formStatus.textContent = 'Sorry, something went wrong. Please try again.';
+                        formStatus.className = 'text-center mt-4 h-6 text-red-400';
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Inquiry';
+                    }
+                });
+            }
         });
     </script>
 </body>
